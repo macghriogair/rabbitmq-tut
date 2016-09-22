@@ -1,0 +1,19 @@
+{
+    "name": "macghriogair/rabbitmq-tut",
+    "authors": [
+        {
+            "name": "Patrick Mac Gregor",
+            "email": "macgregor.porta@gmail.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "2.5.*",
+        "phpunit/phpunit": "^5.5"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Macghriogair\\": "src/"
+        }
+    }
+}
