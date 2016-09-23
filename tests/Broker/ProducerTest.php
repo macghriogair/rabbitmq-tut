@@ -12,10 +12,13 @@ class ProducerTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_publishes_a_message()
     {
-        $channel = 'hello';
+        $channel = 'logs';
         $producer = new Producer();
         $producer->connect();
-        $producer->setupChannel('hello');
-        $producer->publish("Hello World", $channel);
+        // $producer->setupChannel($channel);
+        $producer->setupExchangeChannel($channel);
+        for ($i=0; $i < 5; $i++) {
+            $producer->publish(['payload' => "Hello World at $i"], $channel);
+        }
     }
 }

@@ -25,6 +25,11 @@ abstract class AbstractClient
         $this->channel->queue_declare($name, false, false, false, false);
     }
 
+    public function setupExchangeChannel($name)
+    {
+        $this->channel->exchange_declare($name, 'fanout', false, false, false);
+    }
+
     public function disconnect()
     {
         $this->channel->close();
